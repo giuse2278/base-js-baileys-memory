@@ -61,7 +61,7 @@ const fullSamplesFlow = addKeyword(['samples', utils.setEvent('SAMPLES')])
 const main = async () => {
     const adapterFlow = createFlow([welcomeFlow, registerFlow, fullSamplesFlow])
     
-    const adapterProvider = createProvider(Provider)
+    const adapterProvider = createProvider(Provider, {usePairingCode: true, phoneNumber: '50769358318'})
     const adapterDB = new Database()
 
     const { handleCtx, httpServer } = await createBot({
